@@ -21,6 +21,7 @@
 
                             </div>
                             <div class="card-body">
+                                
                                 <div>
                                     <b>1. Manda tu menu<br></b>
                                     Nos encargamos de configurar la webapp con tus productos<br>
@@ -34,13 +35,13 @@
                                     <b>4. Enchufa la impresora y LISTO<br></b>
                                     Una vez enchufada la impresora se puede empezar a recibir pedidos de las mesas
                                 </div>
-
+                                
                             </div>
                             <div class="card-header">
                                 <div class="h4 strong text-primary">  Por 46€ al mes.                                                        </div>
 
                             </div>
-
+                            <img src="/img/web/pos.avif" width=50% class="img-fluid mx-auto d-block">
 
 
                     </div>
