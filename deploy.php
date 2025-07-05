@@ -1,4 +1,5 @@
 <?php
+
 namespace Deployer;
 
 require 'recipe/laravel.php';
@@ -10,7 +11,7 @@ set('application', 'PlayaAltaPos');
 set('repository', 'https://github.com/scimsoft/mobiletender.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true); 
+set('git_tty', true);
 
 // Shared files/dirs between deploys 
 add('shared_files', ['nodeprinterbridge.js']);
@@ -23,32 +24,27 @@ set('writable_use_sudo', true); // Using sudo in writable commandsset('writable_
 
 // Hosts
 
-host('demo')
-    ->hostname('demo.playaalta.com')
+host('demo.playaalta.com')
     ->set('deploy_path', '/var/www/demo');
 
-host('bar')
-    ->hostname('bar.playaalta.com')
+host('bar.playaalta.com')
     ->set('deploy_path', '/var/www/sergio');
 
-host('playaalta')
-    ->hostname('comer.playaalta.com')
+host('comer.playaalta.com')
     ->set('deploy_path', '/var/www/comer');
 
-host('copas')
-    ->hostname('copas.playaalta.com')
+host('copas.playaalta.com')
     ->set('deploy_path', '/var/www/copas');
 
-host('tertulia')
-    ->hostname('tertulia.horecalo.com')
+host('tertulia.horecalo.com')
     ->set('deploy_path', '/var/www/tertulia')
-    ->set('branch','tertulia');
+    ->set('branch', 'tertulia');
 
-host('horecalo')
-    ->hostname('demo.horecalo.com')
+host('demo.horecalo.com')
+    ->set('remote_user', 'vagrant')
     ->set('deploy_path', '/var/www/horecalo')
-    ->set('branch','horecalo');
-    
+    ->set('branch', 'horecalo');
+
 // Tasks
 
 task('build', function () {
@@ -61,4 +57,3 @@ after('deploy:failed', 'deploy:unlock');
 // Migrate database before symlink new release.
 
 before('deploy:symlink', 'artisan:migrate');
-
